@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-sqlite:///data/demo.db}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    volumes:
+      - ./data:/app/data
